@@ -1,8 +1,16 @@
 {
   "projetos": [
     {
-      "id": 1,
-      "nome": "Alura Tracker 3.0"
+      "id": "1",
+      "nome": "Alura Tracker"
+    },
+    {
+      "id": "1b1c",
+      "nome": "ByteBank"
+    },
+    {
+      "id": "691b",
+      "nome": "Vuex - Estudando e implementando"
     }
   ]
 }
