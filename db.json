@@ -22,6 +22,24 @@
         "id": 1,
         "nome": "Alura Tracker 3.0"
       }
+    },
+    {
+      "id": "b89d",
+      "duracaoEmSegundos": 7,
+      "descricao": "Refatoração do Vuex",
+      "projeto": {
+        "id": "1",
+        "nome": "Alura Tracker"
+      }
+    },
+    {
+      "id": "678c",
+      "duracaoEmSegundos": 2,
+      "descricao": "Estudando padrões de projeot",
+      "projeto": {
+        "id": "1",
+        "nome": "Alura Tracker"
+      }
     }
   ]
 }
