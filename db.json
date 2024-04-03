@@ -15,7 +15,7 @@
   ],
   "tarefas": [
     {
-      "id": 1,
+      "id": "1",
       "duracaoEmSegundos": 120,
       "descricao": "Configuração do ambiente",
       "projeto": {
@@ -35,7 +35,7 @@
     {
       "id": "678c",
       "duracaoEmSegundos": 2,
-      "descricao": "Estudando padrões de projeot",
+      "descricao": "Estudando padrões de projetos",
       "projeto": {
         "id": "1",
         "nome": "Alura Tracker"
