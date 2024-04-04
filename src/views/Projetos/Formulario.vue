@@ -33,7 +33,7 @@ import { CADASTRAR_PROJETO, ALTERAR_PROJETO } from "@/store/tipo-acoes";
     },
     mounted() {
       if(this.id) {
-        const projeto = this.store.state.projetos.find(proj => proj.id === this.id)
+        const projeto = this.store.state.projeto.projetos.find(proj => proj.id === this.id)
         this.nomeDoProjeto = projeto?.nome || ''
       }
     },
