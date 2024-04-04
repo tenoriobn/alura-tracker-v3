@@ -36,6 +36,15 @@
         "id": "1",
         "nome": "Alura Tracker"
       }
+    },
+    {
+      "id": "38f3",
+      "duracaoEmSegundos": 3,
+      "descricao": "Estudando vuex pela Alura",
+      "projeto": {
+        "id": "1",
+        "nome": "Alura Tracker"
+      }
     }
   ]
 }
