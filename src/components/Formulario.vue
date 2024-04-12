@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed } from 'vue';
+  import { defineComponent, computed, ref } from 'vue';
   import { useStore } from '@/store';
   import Temporizador from "./Temporizador.vue";
   import { NOTIFICAR } from '@/store/tipo-mutacoes';
@@ -44,39 +44,39 @@
     components: {
       Temporizador
     },
-    data() {
-      return {
-        descricao: '',
-        idProjeto: '',
-      }
-    },
-    methods: {
-      salvarTarefa (tempoEmSegundos: number) : void {    
-        const projeto = this.projetos.find((proj) => proj.id == this.idProjeto);
+    setup(props, { emit }) {
+      const store = useStore();
+
+      const descricao = ref("");
+      const idProjeto = ref("");
+
+      const projetos = computed(() => store.state.projeto.projetos);
+
+      const salvarTarefa = (tempoEmSegundos: number) : void => {    
+        const projeto = projetos.value.find((proj) => proj.id == idProjeto.value);
 
         if(!projeto) {
-          this.store.commit(NOTIFICAR, {
-              titulo: 'Ops!',
-              texto: "Selecione um projeto antes de finalizar a tarefa!",
-              tipo: TipoNotificacao.FALHA,
+          store.commit(NOTIFICAR, {
+            titulo: 'Ops!',
+            texto: "Selecione um projeto antes de finalizar a tarefa!",
+            tipo: TipoNotificacao.FALHA,
           });
           return; 
         }
 
-        this.$emit('aoSalvarTarefa', {
+        emit('aoSalvarTarefa', {
           duracaoEmSegundos: tempoEmSegundos,
-          descricao: this.descricao,
+          descricao: descricao.value,
           projeto: projeto
         })
-        this.descricao = ''
+        descricao.value = ''
       }
-    },
-    setup() {
-      const store = useStore();
 
       return {
-        store,
-        projetos: computed(() => store.state.projeto.projetos)
+        descricao,
+        idProjeto,
+        projetos,
+        salvarTarefa
       }
     }
   });

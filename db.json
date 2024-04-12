@@ -49,6 +49,15 @@
         "id": "1",
         "nome": "Alura Tracker"
       }
+    },
+    {
+      "id": "e9d0",
+      "duracaoEmSegundos": 10,
+      "descricao": "Teste",
+      "projeto": {
+        "id": "380e",
+        "nome": "Estudando Padrões de Projeto"
+      }
     }
   ]
 }
